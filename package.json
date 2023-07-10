@@ -1,6 +1,9 @@
 {
   "name": "luckysheet",
   "version": "2.1.13",
+  "author": "rhosseinr",
+  "license": "GNU",
+  "description": "luckySheet package for npm",
   "main": "dist/luckysheet.cjs.js",
   "module": "dist/luckysheet.esm.js",
   "browser": "dist/luckysheet.umd.js",

@@ -5313,15 +5313,9 @@ const menuButton = {
         "Arial",
         "Tahoma",
         "Verdana",
-        "微软雅黑",
-        "宋体",
-        "黑体",
-        "楷体",
-        "仿宋",
-        "新宋体",
-        "华文新魏",
-        "华文行楷",
-        "华文隶书",
+        "Vazir",
+        "Segoe UI",
+        "sans-serif"
     ],
     addFontTolist: function(fontName) {
         fontName = fontName.replace(/"/g, "").replace(/'/g, "");
