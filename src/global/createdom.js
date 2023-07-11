@@ -52,10 +52,10 @@ export default function luckysheetcreatedom(
     locale_info.addLast +
     ")</span>";
   let backControll =
-    ' <button id="luckysheet-bottom-bottom-top" class="btn btn-default" style="">' +
+    ' <button id="luckysheet-bottom-bottom-top" class="btn btn-default" >' +
     locale_info.backTop +
     "</button>";
-  // let pageControll = ' <span id="luckysheet-bottom-page-info" style="font-size: 14px;color: #f34141;">共'+ luckysheetConfigsetting.pageInfo.totalPage +'页，当前已显示'+ (luckysheetConfigsetting.pageInfo.currentPage) +'页，每页'+ luckysheetConfigsetting.pageInfo.pageSize +'条</span> <button id="luckysheet-bottom-page-next" class="btn btn-danger" style="">下一页</button>';
+  // let pageControll = ' <span id="luckysheet-bottom-page-info" style="font-size: 14px;color: #f34141;">共'+ luckysheetConfigsetting.pageInfo.totalPage +'页，当前已显示'+ (luckysheetConfigsetting.pageInfo.currentPage) +'页，每页'+ luckysheetConfigsetting.pageInfo.pageSize +'条</span> <button id="luckysheet-bottom-page-next" class="btn btn-danger" >下一页</button>';
   let pageInfo = replaceHtml(locale_info.pageInfo, {
     total: luckysheetConfigsetting.total ? luckysheetConfigsetting.total : "",
     totalPage: luckysheetConfigsetting.pageInfo.totalPage
@@ -68,7 +68,7 @@ export default function luckysheetcreatedom(
   let pageControll =
     ' <span id="luckysheet-bottom-page-info" style="font-size: 14px;color: #f34141;">' +
     pageInfo +
-    '</span> <button id="luckysheet-bottom-page-next" class="btn btn-danger" style="">下一页</button>';
+    '</span> <button id="luckysheet-bottom-page-next" class="btn btn-danger" >下一页</button>';
   let pageControll2 =
     ' <span id="luckysheet-bottom-page-info" style="font-size: 14px;color: #f34141;">' +
     pageInfo +

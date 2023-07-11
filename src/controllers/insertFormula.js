@@ -152,7 +152,7 @@ const insertFormula = {
                   locale_formulaMore.valueTitle +
                   "" +
                   (parmCount + 1) +
-                  '</div><div class="txt"><input class="formulaInputFocus" /><i class="fa fa-table" aria-hidden="true" title="' +
+                  '</div><div class="txt"><input class="form-input formulaInputFocus" /><i class="fa fa-table" aria-hidden="true" title="' +
                   locale_formulaMore.tipSelectDataRange +
                   '"></i></div><div class="val">=</div></div>'
               ).appendTo($("#luckysheet-search-formula-parm .parmListBox"));
@@ -332,7 +332,7 @@ const insertFormula = {
         content:
           "<div class='inpbox'><label for='searchFormulaListInput'>" +
           locale_formulaMore.findFunctionTitle +
-          "：</label><input class='formulaInputFocus form-input' id='searchFormulaListInput' placeholder='" +
+          "：</label><input class='form-input' id='searchFormulaListInput' placeholder='" +
           locale_formulaMore.tipInputFunctionName +
           "' spellcheck='false'/></div><div class='selbox'><label>" +
           locale_formulaMore.selectCategory +
@@ -448,7 +448,7 @@ const insertFormula = {
               functionlist[i].p[j].name +
               "</div>" +
               '<div class="txt">' +
-              '<input class="formulaInputFocus" spellcheck="false"/>' +
+              '<input class="form-input formulaInputFocus" spellcheck="false"/>' +
               '<i class="fa fa-table" aria-hidden="true" title="' +
               locale_formulaMore.tipSelectDataRange +
               '"></i>' +
@@ -467,7 +467,7 @@ const insertFormula = {
               functionlist[i].p[j].name +
               "</div>" +
               '<div class="txt">' +
-              '<input class="formulaInputFocus" value="' +
+              '<input class="form-input formulaInputFocus" value="' +
               parm[j] +
               '" spellcheck="false"/>' +
               '<i class="fa fa-table" aria-hidden="true" title="' +

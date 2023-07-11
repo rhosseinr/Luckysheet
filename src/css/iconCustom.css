@@ -57,7 +57,9 @@
 
 /* more button border */
 #luckysheet-icon-morebtn-div {
-  border: 1px solid rgb(212, 212, 212);
+  border-radius: 5px;
+  background: rgba(250, 250, 250, 0.6);
+  backdrop-filter: blur(15px) saturate(180%);
 }
 
 /* sheet bar add/menu button */

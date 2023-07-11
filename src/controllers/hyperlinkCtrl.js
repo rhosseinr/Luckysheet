@@ -41,11 +41,11 @@ const hyperlinkCtrl = {
     let content = `<div class="box">
                             <div class="box-item">
                                 <label for="luckysheet-insertLink-dialog-linkText">${hyperlinkText.linkText}：</label>
-                                <input type="text" id="luckysheet-insertLink-dialog-linkText"/>
+                                <input type="text" class="form-input" id="luckysheet-insertLink-dialog-linkText"/>
                             </div>
                             <div class="box-item">
                                 <label for="luckysheet-insertLink-dialog-linkType">${hyperlinkText.linkType}：</label>
-                                <select id="luckysheet-insertLink-dialog-linkType">
+                                <select class="form-input" id="luckysheet-insertLink-dialog-linkType">
                                     <option value="external">${hyperlinkText.external}</option>
                                     <option value="internal">${hyperlinkText.internal}</option>
                                 </select>
@@ -53,24 +53,24 @@ const hyperlinkCtrl = {
                             <div class="show-box show-box-external">
                                 <div class="box-item">
                                     <label for="luckysheet-insertLink-dialog-linkAddress">${hyperlinkText.linkAddress}：</label>
-                                    <input type="text" id="luckysheet-insertLink-dialog-linkAddress" placeholder="${hyperlinkText.placeholder1}" />
+                                    <input class="form-input" type="text" id="luckysheet-insertLink-dialog-linkAddress" placeholder="${hyperlinkText.placeholder1}" />
                                 </div>
                             </div>
                             <div class="show-box show-box-internal">
                                 <div class="box-item">
                                     <label for="luckysheet-insertLink-dialog-linkSheet">${hyperlinkText.linkSheet}：</label>
-                                    <select id="luckysheet-insertLink-dialog-linkSheet">
+                                    <select class="form-input" id="luckysheet-insertLink-dialog-linkSheet">
                                         ${sheetListOption}
                                     </select>
                                 </div>
                                 <div class="box-item">
                                     <label for="luckysheet-insertLink-dialog-linkCell">${hyperlinkText.linkCell}：</label>
-                                    <input type="text" id="luckysheet-insertLink-dialog-linkCell" value="A1" placeholder="${hyperlinkText.placeholder2}" />
+                                    <input class="form-input" type="text" id="luckysheet-insertLink-dialog-linkCell" value="A1" placeholder="${hyperlinkText.placeholder2}" />
                                 </div>
                             </div>
                             <div class="box-item">
                                 <label for="luckysheet-insertLink-dialog-linkTooltip">${hyperlinkText.linkTooltip}：</label>
-                                <input type="text" id="luckysheet-insertLink-dialog-linkTooltip" placeholder="${hyperlinkText.placeholder3}" />
+                                <input class="form-input" type="text" id="luckysheet-insertLink-dialog-linkTooltip" placeholder="${hyperlinkText.placeholder3}" />
                             </div>
                         </div>`;
 

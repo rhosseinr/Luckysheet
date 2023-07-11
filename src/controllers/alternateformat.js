@@ -1146,7 +1146,7 @@ const alternateformat = {
         addclass: "luckysheet-alternateformat-rangeDialog",
         title: alternatingColors.selectRange,
         content:
-          '<input readonly="readonly" placeholder="' +
+          '<input readonly="readonly" class="form-input" placeholder="' +
           alternatingColors.tipSelectRange +
           '" value="' +
           value +

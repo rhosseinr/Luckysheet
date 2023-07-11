@@ -28,39 +28,39 @@ const luckysheetSplitColumn = {
       locale_splitText.splitDelimiters +
       "</div>" +
       '<div class="boxMain">' +
-      '<div style="height: 22px;line-height: 22px;">' +
+      '<div style="height: 30px;line-height: 30px;">' +
       '<input id="splitColumn_type_01" type="checkbox"/>' +
       '<label for="splitColumn_type_01">' +
       locale_punctuation.tab +
       "</label>" +
       "</div>" +
-      '<div style="height: 22px;line-height: 22px;">' +
+      '<div style="height: 30px;line-height: 30px;">' +
       '<input id="splitColumn_type_02" type="checkbox"/>' +
       '<label for="splitColumn_type_02">' +
       locale_punctuation.semicolon +
       "</label>" +
       "</div>" +
-      '<div style="height: 22px;line-height: 22px;">' +
+      '<div style="height: 30px;line-height: 30px;">' +
       '<input id="splitColumn_type_03" type="checkbox"/>' +
       '<label for="splitColumn_type_03">' +
       locale_punctuation.comma +
       "</label>" +
       "</div>" +
-      '<div style="height: 22px;line-height: 22px;">' +
+      '<div style="height: 30px;line-height: 30px;">' +
       '<input id="splitColumn_type_04" type="checkbox"/>' +
       '<label for="splitColumn_type_04">' +
       locale_punctuation.space +
       "</label>" +
       "</div>" +
-      '<div style="height: 22px;line-height: 22px;">' +
+      '<div style="height: 30px;line-height: 30px;">' +
       '<input id="splitColumn_type_05" type="checkbox"/>' +
       '<label for="splitColumn_type_05">' +
       locale_splitText.splitOther +
       "</label>" +
-      '<input type="text" class="formulaInputFocus" maxlength="1"/>' +
+      '<input type="text" class="form-input formulaInputFocus" maxlength="1"/>' +
       "</div>" +
       "</div>" +
-      '<div style="height: 22px;line-height: 22px;">' +
+      '<div style="height: 30px;line-height: 30px;">' +
       '<input id="splitColumn_type_06" type="checkbox"/>' +
       '<label for="splitColumn_type_06">' +
       locale_splitText.splitContinueSymbol +

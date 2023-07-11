@@ -1271,7 +1271,7 @@ const luckysheetMoreFormat = {
         "<label>" +
         locale_format.decimalPlaces +
         "：</label>" +
-        '<input type="number" class="formulaInputFocus" value="2" min="0" max="9"/>' +
+        '<input type="number" class="form-input formulaInputFocus" value="2" min="0" max="9"/>' +
         "</div>" +
         '<div class="listbox">' +
         listHtml +

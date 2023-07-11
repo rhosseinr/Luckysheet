@@ -1,9 +1,24 @@
-﻿::-webkit-scrollbar-track {
+﻿:root {
+  --primary-color: #0078d4;
+  --font-family: system-ui, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --base-bg: #fff;
+}
+
+html {
+  font-size: 13px;
+}
+
+::-webkit-scrollbar-track {
   background-color: transparent;
 }
 
 .luckysheet-noselected-text {
   user-select: none;
+}
+
+input,
+select {
+  outline: 0;
 }
 
 .chart-moveable {
@@ -13,9 +28,9 @@
 .luckysheet {
   position: absolute;
   font-size: 12px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-family);
   border: 1px solid #e5e5e5;
-  background: #fff;
+  background: var(--base-bg);
 }
 
 .luckysheet * {
@@ -46,7 +61,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: var(--base-bg);
 }
 
 .luckysheet-loading-content {
@@ -97,9 +112,8 @@
   height: 56px;
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 1);
+  background: #107c41;
   box-shadow: 0px -1px 0px 0px rgba(230, 231, 232, 1);
-  border-bottom: 1px solid #d4d4d4;
 }
 
 .luckysheet_info_detail .sheet-name {
@@ -121,7 +135,7 @@
 .luckysheet_info_detail .luckysheet_info_detail_input {
   border: 1px solid transparent;
   border-radius: 3px !important;
-  color: #000000;
+  color: #000;
   font-size: 16px;
   height: 26px;
   line-height: 22px;
@@ -129,6 +143,7 @@
   min-width: 1px;
   padding: 2px 7px;
   visibility: hidden;
+  background: rgba(250, 250, 250, 0.6);
 }
 
 .luckysheet_info_detail .luckysheet_info_detail_input:hover {
@@ -144,7 +159,7 @@
 }
 
 .luckysheet_info_detail_update {
-  color: #cbcbcb;
+  color: #eee;
   font-size: 12px;
   margin-left: 15px;
 }
@@ -163,7 +178,7 @@
   object-fit: cover;
 }
 .luckysheet_info_detail_save {
-  color: #828282;
+  color: #ccc;
   font-size: 12px;
   margin: 0 5px;
 }
@@ -173,11 +188,12 @@
   width: 152px;
   z-index: 1;
   background-image: url("data:image/png;base64,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");
+  filter: drop-shadow(0px 0px 1px rgba(250, 250, 250, 0.6));
 }
 
 .luckysheet-wa-editor {
   height: 32px;
-  background: #fafafc;
+  background: #f3f2f1;
   position: relative;
   padding: 5px 0px 3px 15px;
   border-bottom: 1px solid #d4d4d4;
@@ -197,6 +213,7 @@
 .luckysheet-inline-block {
   position: relative;
   display: inline-block;
+  font-family: var(--font-family);
 }
 
 /*分隔符*/
@@ -302,7 +319,7 @@
 
 .luckysheet-toolbar-combo-button-input:focus {
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
-  background: #fff;
+  background: var(--base-bg);
   outline: none;
   border: 1px solid #0188fb !important;
 }
@@ -408,8 +425,7 @@
 /*button*/
 .luckysheet-toolbar-button,
 .luckysheet-toolbar-menu-button {
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
+  border-radius: 5px;
   user-select: none;
   background: 0;
   border: 1px solid transparent;
@@ -519,11 +535,6 @@
   color: #0188fb;
 }
 
-.luckysheet-rightgclick-menu-sub .sp-container {
-  background-color: #ffffff;
-  border: solid 1px #ffffff;
-}
-
 #luckysheet-icon-text-color-menu-menuButton .sp-palette-container,
 #luckysheet-icon-cell-color-menu-menuButton .sp-palette-container {
   margin-bottom: -300px;
@@ -536,11 +547,10 @@
 
 /*toolbar菜单end*/
 .luckysheet-wa-calculate {
-  height: 28px;
-  background: #fff;
+  height: 48px;
+  background: #e6e6e6;
   position: relative;
   padding-right: 44px;
-  border-bottom: 1px solid #d4d4d4;
 }
 
 .luckysheet-wa-calculate-help {
@@ -566,8 +576,10 @@
   resize: none;
   font-size: 14px;
   line-height: 14px;
-  background-color: #ffffff;
+  background-color: var(--base-bg);
   padding: 2px 5px;
+  height: 24px;
+  border: 1px solid #c6c6c6;
 }
 
 .luckysheet-helpbox-cell-input {
@@ -580,7 +592,7 @@
   white-space: nowrap;
   overflow: hidden;
   transform: translateZ(0);
-  background-color: white;
+  background: var(--base-bg);
   word-wrap: break-word;
   -webkit-nbsp-mode: space;
   line-break: after-white-space;
@@ -676,7 +688,7 @@
 
 .luckysheet-sta-c {
   height: 22px;
-  background-color: #fff;
+  background-color: #f3f2f1;
   border-top: 1px solid #e1e1e1;
   user-select: none;
 }
@@ -714,17 +726,17 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #fafafc;
+  background-color: #e6e6e6;
   color: #444;
   height: 31px;
   padding: 0 0 0 44px;
   margin: 0;
-  -webkit-touch-callout: none;
   cursor: default;
   transition: 0.3s ease all;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-top: 1px solid #999;
 }
 
 #luckysheet-sheet-content {
@@ -831,7 +843,7 @@ div.luckysheet-sheets-m:hover {
   padding: 2px 6px;
   height: 29px;
   line-height: 29px;
-  background-color: #fafafc;
+  background-color: transparent;
   color: #676464;
   min-width: 30px;
   top: 0px;
@@ -842,9 +854,11 @@ div.luckysheet-sheets-m:hover {
   font-size: 13px;
   padding: 2px 19px 0px 5px;
   box-sizing: border-box;
-  border-left: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
-  border-right: 1px solid #e0e0e0;
+  border-left: 1px solid #d4d4d4;
+  border-top: 2px solid transparent;
+  border-right: 1px solid #d4d4d4;
+  display: inline-flex;
+  align-items: center;
 }
 
 .luckysheet-sheet-area div.luckysheet-sheets-item:last-child {
@@ -902,8 +916,8 @@ div.luckysheet-sheets-m:hover {
 .luckysheet-sheet-area div.luckysheet-sheets-item-active {
   height: 29px;
   line-height: 29px;
-  background-color: #efefef;
-  border-top-color: #fff;
+  background-color: var(--base-bg);
+  border-top-color: #217346;
   color: #222;
   cursor: default;
 }
@@ -920,7 +934,7 @@ div.luckysheet-sheets-m:hover {
   bottom: 27px;
   left: 0;
   min-width: 200px;
-  background-color: #ffffff !important;
+  background-color: var(--base-bg) !important;
   overflow: hidden;
   user-select: none;
 }
@@ -946,6 +960,7 @@ div.luckysheet-sheets-m:hover {
 
 .luckysheet-paneswrapper {
   overflow: hidden;
+  background-color: #e6e6e6;
   height: 1px;
 }
 
@@ -959,6 +974,7 @@ div.luckysheet-sheets-m:hover {
   margin: -1px 0 0 -1px;
   padding-left: 0;
   cursor: pointer;
+  background-color: #e6e6e6;
 }
 
 .luckysheet-cols-h-c {
@@ -1257,10 +1273,9 @@ body:not(.ewa-ipad) .luckysheet-rows-h-cell-sel:hover {
 }
 
 .luckysheet-cell-main {
-  background-color: white;
+  background: var(--base-bg);
   width: 15px;
   height: 15px;
-  background-color: #f3f3f2;
   border-collapse: collapse;
   position: relative;
   overflow: hidden;
@@ -1270,7 +1285,7 @@ body:not(.ewa-ipad) .luckysheet-rows-h-cell-sel:hover {
 
 .luckysheet-scrollbars,
 .luckysheet-menu {
-  scrollbar-base-color: #ffffff;
+  scrollbar-base-color: var(--base-bg);
   scrollbar-track-color: #e7e7e7;
   scrollbar-darkshadow-color: #ffffff;
   scrollbar-3dlight-color: #ffffff;
@@ -1391,13 +1406,13 @@ body:not(.ewa-ipad) .luckysheet-rows-h-cell-sel:hover {
 .luckysheet-scrollbar-x {
   bottom: 0px;
   left: 44px;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 .luckysheet-scrollbar-y {
   right: 0px;
   top: 0px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .luckysheet-cell-flow {
@@ -1453,6 +1468,8 @@ body:not(.ewa-ipad) .luckysheet-rows-h-cell-sel:hover {
 #luckysheet-bottom-add-row-input {
   width: 40px;
   min-width: 40px;
+  border-radius: 5px;
+  margin-inline-end: 1rem;
 }
 
 #luckysheet-bottom-return-top {
@@ -1696,7 +1713,7 @@ body:not(.ewa-ipad) .luckysheet-rows-h-cell-sel:hover {
 .luckysheet-cs-draghandle {
   position: absolute;
   cursor: move;
-  background-color: #fff;
+  background-color: var(--base-bg);
   opacity: 0.01;
   z-index: 15;
   pointer-events: auto;
@@ -1748,7 +1765,7 @@ body:not(.ewa-ipad) .luckysheet-rows-h-cell-sel:hover {
   width: 16px;
   height: 16px;
   border: 0.5px solid rgba(0, 0, 0, 0.15);
-  background-color: #ffffff;
+  background-color: var(--base-bg);
   box-sizing: border-box;
   border-radius: 50%;
 }
@@ -1796,7 +1813,7 @@ body:not(.ewa-ipad) .luckysheet-rows-h-cell-sel:hover {
 }
 
 .luckysheet-scrollbars::-webkit-scrollbar-track {
-  background-color: #ffffff;
+  background-color: var(--base-bg);
   border: 1px solid #d9d9d9;
 }
 
@@ -1813,7 +1830,7 @@ body:not(.ewa-ipad) .luckysheet-rows-h-cell-sel:hover {
 .luckysheet-scrollbars::-webkit-scrollbar {
   width: 12px;
   height: 12px;
-  background-color: #ffffff;
+  background-color: var(--base-bg);
 }
 
 .luckysheet-scrollbars::-webkit-scrollbar-thumb {
@@ -1919,6 +1936,7 @@ body:not(.ewa-ipad) .luckysheet-rows-h-cell-sel:hover {
   border-radius: 5px;
   background: rgba(250, 250, 250, 0.6);
   backdrop-filter: blur(15px) saturate(180%);
+  font-family: var(--font-family);
 }
 
 .luckysheet-cols-menu .luckysheet-cols-menuitem {
@@ -2078,11 +2096,11 @@ body:not(.ewa-ipad) .luckysheet-rows-h-cell-sel:hover {
 .luckysheet-filter-menu
   .luckysheet-pivotTableFilter-byvalue
   .luckysheet-cols-menuitem:hover {
-  background: #fff;
+  background: var(--base-bg);
 }
 
 .luckysheet-filter-menu .luckysheet-cols-menuitem:last-child:hover {
-  background: #fff;
+  background: var(--base-bg);
 }
 
 .luckysheet-filter-menu .luckysheet-cols-menuitem:last-child,
@@ -2325,17 +2343,8 @@ body:not(.ewa-ipad) .luckysheet-rows-h-cell-sel:hover {
   border-radius: 2px;
   user-select: none;
   border-radius: 5px;
-}
-
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn.active.focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
+  outline-style: 0;
+  outline: 0;
 }
 
 .btn:hover,
@@ -2349,7 +2358,6 @@ body:not(.ewa-ipad) .luckysheet-rows-h-cell-sel:hover {
 .btn.active {
   outline: 0;
   background-image: none;
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
@@ -2359,7 +2367,6 @@ fieldset[disabled] .btn {
   cursor: not-allowed;
   opacity: 0.65;
   filter: alpha(opacity=65);
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
@@ -2370,7 +2377,7 @@ fieldset[disabled] a.btn {
 
 .btn-default {
   color: #333;
-  background-color: #fff;
+  background-color: var(--base-bg);
   border-color: #ccc;
 }
 
@@ -2424,7 +2431,7 @@ fieldset[disabled] .btn-default:focus,
 .btn-default.disabled.focus,
 .btn-default[disabled].focus,
 fieldset[disabled] .btn-default.focus {
-  background-color: #fff;
+  background-color: var(--base-bg);
   border-color: #ccc;
 }
 
@@ -2435,7 +2442,7 @@ fieldset[disabled] .btn-default.focus {
 
 .btn-primary {
   color: #ffffff;
-  background-color: #2d7ff9;
+  background-color: var(--primary-color);
   border-color: transparent;
 }
 
@@ -2502,8 +2509,8 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .btn-primary .badge {
-  color: #337ab7;
-  background-color: #ffffff;
+  color: var(--primary-color);
+  background-color: var(--base-bg);
 }
 
 .btn-primary,
@@ -2511,7 +2518,7 @@ fieldset[disabled] .btn-primary.active {
 .list-group-item.active,
 .list-group-item.active:hover,
 .list-group-item.active:focus {
-  background: #0188fb;
+  background: var(--primary-color);
   border-color: transparent;
 }
 
@@ -2583,7 +2590,7 @@ fieldset[disabled] .btn-danger.focus {
 
 .btn-danger .badge {
   color: #d9534f;
-  background-color: #fff;
+  background-color: var(--base-bg);
 }
 
 .luckysheet-cols-change-size,
@@ -2714,7 +2721,8 @@ fieldset[disabled] .btn-danger.focus {
 
 .luckysheet-modal-dialog {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  background: #fff;
+  background: rgba(250, 250, 250, 0.6);
+  backdrop-filter: blur(15px) saturate(180%);
   background-clip: padding-box;
   outline: 0;
   position: absolute;
@@ -2722,13 +2730,14 @@ fieldset[disabled] .btn-danger.focus {
   z-index: 100002;
   border-radius: 5px;
   overflow: hidden;
+  font-family: var(--font-family);
 }
 
 .luckysheet-modal-dialog-mask {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: #fff;
+  background: var(--base-bg);
   opacity: 0.6;
   display: none;
   left: 0px;
@@ -2737,7 +2746,6 @@ fieldset[disabled] .btn-danger.focus {
 }
 
 .luckysheet-modal-dialog-title {
-  background-color: rgba(100, 100, 100, 0.1);
   color: #000;
   cursor: default;
   font-size: 16px;
@@ -2778,7 +2786,7 @@ fieldset[disabled] .btn-danger.focus {
   position: absolute;
   height: 6px;
   width: 6px;
-  background: #ffffff;
+  background: var(--base-bg);
   border: 2px solid #0188fb;
   pointer-events: all;
   border-radius: 6px;
@@ -2853,7 +2861,7 @@ fieldset[disabled] .btn-danger.focus {
   outline: 0;
   border: 1px solid #b6b6b6;
   display: block;
-  background: #fff;
+  background: var(--base-bg);
   margin-bottom: 3px;
   cursor: pointer;
   transition: all 0.2s;
@@ -2912,7 +2920,7 @@ fieldset[disabled] .btn-danger.focus {
 }
 
 .luckysheet-modal-dialog-content {
-  background-color: #fff;
+  background-color: var(--base-bg);
   line-height: 1.4em;
   word-wrap: break-word;
   padding: 1rem;
@@ -2920,7 +2928,7 @@ fieldset[disabled] .btn-danger.focus {
 
 .luckysheet-modal-dialog-buttons {
   margin-top: 10px;
-  padding: 1rem;
+  padding: 0.5em 1rem;
   display: flex;
   justify-content: flex-end;
 }
@@ -2979,7 +2987,7 @@ fieldset[disabled] .btn-danger.focus {
   padding: 0px 4px;
   font-size: 12px;
   height: 15px;
-  background: #fff;
+  background: var(--base-bg);
 }
 
 .luckysheet-filter-options:hover {
@@ -3086,7 +3094,7 @@ fieldset[disabled] .btn-danger.focus {
   border-bottom: none;
   height: 24px;
   line-height: 24px;
-  background: #fff;
+  background: var(--base-bg);
   color: #777;
 }
 
@@ -3160,7 +3168,7 @@ fieldset[disabled] .btn-danger.focus {
 }
 
 .luckysheet-datavisual-range-container {
-  background: #fff;
+  background: var(--base-bg);
   border: 1px solid #d9d9d9;
   border-top: 1px solid #c0c0c0;
   min-width: 20px;
@@ -3257,6 +3265,7 @@ fieldset[disabled] .btn-danger.focus {
 
 .jfk-tooltip {
   z-index: 300000;
+  font-family: var(--font-family);
 }
 
 .jfk-tooltip-hide {
@@ -3272,13 +3281,9 @@ fieldset[disabled] .btn-danger.focus {
   border-radius: 0;
   box-shadow: none;
   transition: visibility 0, opacity 0.13s ease-in;
-  background-color: #2a2a2a;
-  border: 1px solid #fff;
-  color: #fff;
   cursor: default;
   display: block;
   font-size: 11px;
-  font-weight: bold;
   margin-left: -1px;
   opacity: 1;
   padding: 7px 9px;
@@ -3287,53 +3292,10 @@ fieldset[disabled] .btn-danger.focus {
   white-space: pre-wrap;
   word-break: break-all;
   word-break: break-word;
-}
-
-.jfk-tooltip-arrowup {
-  top: -6px;
-}
-
-.jfk-tooltip-arrow {
-  pointer-events: none;
-  position: absolute;
-}
-
-.jfk-tooltip-arrow .jfk-tooltip-arrowimplafter {
-  border: 5px solid;
-}
-
-.jfk-tooltip-arrow .jfk-tooltip-arrowimplbefore {
-  border: 6px solid;
-}
-
-.jfk-tooltip-arrow .jfk-tooltip-arrowimplbefore,
-.jfk-tooltip-arrow .jfk-tooltip-arrowimplafter {
-  content: "";
-  display: block;
-  height: 0;
-  position: absolute;
-  width: 0;
-}
-
-.jfk-tooltip-arrowup .jfk-tooltip-arrowimplafter {
-  border-top-width: 0;
-  top: 1px;
-}
-
-.jfk-tooltip-arrowdown .jfk-tooltip-arrowimplafter,
-.jfk-tooltip-arrowup .jfk-tooltip-arrowimplafter {
-  border-color: #2a2a2a transparent;
-  left: -5px;
-}
-
-.jfk-tooltip-arrowup .jfk-tooltip-arrowimplbefore {
-  border-top-width: 0;
-}
-
-.jfk-tooltip-arrowdown .jfk-tooltip-arrowimplbefore,
-.jfk-tooltip-arrowup .jfk-tooltip-arrowimplbefore {
-  border-color: #fff transparent;
-  left: -6px;
+  border-radius: 5px;
+  background: rgba(250, 250, 250, 0.6);
+  backdrop-filter: blur(15px) saturate(180%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /*图表详细设置*/
@@ -3379,7 +3341,7 @@ fieldset[disabled] .btn-danger.focus {
 
 .luckysheet-datavisual-config-input,
 .luckysheet-datavisual-config-input-no {
-  background: #fff;
+  background: var(--base-bg);
   border: 1px solid #d9d9d9;
   border-top: 1px solid #c0c0c0;
   min-width: 50px;
@@ -3421,14 +3383,14 @@ fieldset[disabled] .btn-danger.focus {
 
 .luckysheet-datavisual-content-rowsplit {
   height: 5px;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #d4d4d4;
   width: 100%;
   margin-top: 25px;
 }
 
 .luckysheet-datavisual-content-rowsplit-sub {
   height: 2px;
-  border-top: 1px dashed #e5e5e5;
+  border-top: 1px dashed #d4d4d4;
   width: 90%;
   margin: 0 auto;
   margin-top: 18px;
@@ -3437,8 +3399,9 @@ fieldset[disabled] .btn-danger.focus {
 
 .sp-replacer {
   padding: 2px;
-  border: solid 1px #e5e5e5;
+  border: solid 1px #d4d4d4;
   background: #f5f5f5;
+  border-radius: 5px;
 }
 
 .ui-visual-focus {
@@ -3473,7 +3436,7 @@ fieldset[disabled] .btn-danger.focus {
 .luckysheet-datavisual-content-column-italic {
   font-style: italic;
   font-weight: bold;
-  font-family: "Times New Roman", Times, serif;
+  font-family: var(--font-family);
 }
 
 .luckysheetChartAxisShow {
@@ -3673,7 +3636,7 @@ fieldset[disabled] .btn-danger.focus {
   margin-top: 5px;
   width: 90px;
   border: 2px solid #f5f5f5;
-  background: #fff;
+  background: var(--base-bg);
   text-align: center;
   padding: 5px 0px;
   user-select: none;
@@ -3807,20 +3770,21 @@ fieldset[disabled] .btn-danger.focus {
 
 /*边栏通用样式*/
 .luckysheet-modal-dialog-slider {
-  top: 1px;
-  bottom: 1px;
+  top: 0;
+  bottom: 0;
   position: absolute;
   right: 0px;
   width: 260px;
-  border: 1px solid #e5e5e5;
+  border: 0;
   z-index: 1004;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   user-select: none;
+  font-family: var(--font-family);
+  background: var(--base-bg);
 }
 
 .luckysheet-modal-dialog-slider .luckysheet-modal-dialog-slider-title {
-  background: #333;
-  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
   height: 39px;
   width: 100%;
   position: absolute;
@@ -3834,7 +3798,6 @@ fieldset[disabled] .btn-danger.focus {
   .luckysheet-modal-dialog-slider-title
   > span:first-child {
   margin-left: 5px;
-  font-weight: bold;
 }
 
 .luckysheet-modal-dialog-slider
@@ -3847,21 +3810,38 @@ fieldset[disabled] .btn-danger.focus {
 }
 
 .luckysheet-modal-dialog-slider-content {
-  background: #efefef;
+  background: var(--base-bg);
   margin-top: 39px;
   width: 100%;
   position: absolute;
   top: 0px;
   bottom: 0px;
   font-size: 12px;
+  padding: 1rem;
+  box-sizing: border-box;
+  height: calc(100vh - 42px);
+  overflow: auto;
 }
 
 .luckysheet-modal-dialog-slider-range {
-  background: #e1e1de;
+  background: #f4f4f4;
   color: #1b1b19;
   height: 40px;
-  font-size: 13px;
+  font-size: 1rem;
   line-height: 40px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.luckysheet-modal-dialog-slider-config-c {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.luckysheet-modal-dialog-slider-config-c > div {
+  width: 49%;
 }
 
 .luckysheet-modal-dialog-slider-range > div:first-child {
@@ -3882,14 +3862,11 @@ fieldset[disabled] .btn-danger.focus {
 }
 
 .luckysheet-modal-dialog-slider-list {
-  width: 250px;
-  height: 320px;
-  overflow-y: scroll;
+  width: 100%;
+  height: 200px;
+  overflow-y: auto;
   margin: 5px 0px;
-  margin-left: 5px;
-  border-top: 1px solid #e5e5e5;
-  border-bottom: 1px solid #e5e5e5;
-  background: #fff;
+  background: var(--base-bg);
 }
 
 .luckysheet-modal-dialog-slider-list-title {
@@ -3901,7 +3878,6 @@ fieldset[disabled] .btn-danger.focus {
 .luckysheet-modal-dialog-slider-list .luckysheet-modal-dialog-slider-list-item {
   padding: 0px 4px;
   position: relative;
-  width: 228px;
   height: 25px;
   user-select: none;
   border: 1px solid #fff;
@@ -4011,20 +3987,6 @@ fieldset[disabled] .btn-danger.focus {
   color: #fb8686;
 }
 
-.luckysheet-modal-dialog-slider-config-c {
-  width: 100%;
-  position: absolute;
-  margin-top: 390px;
-  top: 0px;
-  bottom: 3px;
-}
-
-.luckysheet-modal-dialog-slider-config {
-  height: 50%;
-  width: 50%;
-  position: absolute;
-}
-
 .luckysheet-modal-dialog-slider-config > div:first-child {
   color: #1b1b19;
   font-size: 13px;
@@ -4034,41 +3996,35 @@ fieldset[disabled] .btn-danger.focus {
 }
 
 .luckysheet-modal-dialog-slider-config > div:first-child span {
-  font-weight: bold;
-  font-weight: bold;
   overflow: hidden;
 }
 
 .luckysheet-modal-dialog-slider-config
   .luckysheet-modal-dialog-slider-config-list {
-  position: absolute;
-  margin-top: 22px;
-  margin-left: 5px;
-  left: 0px;
-  right: 5px;
-  top: 0px;
-  bottom: 3px;
-  border: 1px solid #e5e5e5;
+  margin-top: 0.5em;
+  border: 1px solid #d4d4d4;
   user-select: none;
   overflow-y: auto;
-  background: #fff;
+  background: var(--base-bg);
+  min-height: 100px;
+  border-radius: 5px;
 }
 
 .luckysheet-modal-dialog-slider-config-list
   .luckysheet-modal-dialog-slider-config-item {
   position: relative;
-  height: 19px;
-  line-height: 19px;
+  height: 20px;
+  line-height: 20px;
   font-size: 12px;
-  border: 1px solid #88adfd;
-  background: #aac1fe;
+  background: var(--primary-color);
   margin: 2px;
+  border-radius: 5px;
+  color: white;
 }
 
 .luckysheet-modal-dialog-slider-config-list
   .luckysheet-modal-dialog-slider-config-item:hover {
-  border: 1px solid #0188fb;
-  background: #5f9afc;
+  opacity: 0.7;
 }
 
 .luckysheet-modal-dialog-slider-config-item-txt {
@@ -4122,7 +4078,7 @@ fieldset[disabled] .btn-danger.focus {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  background: #fff;
+  background: var(--base-bg);
   border: 1px dotted #000;
   color: #000;
   font-size: 14px;
@@ -4141,15 +4097,10 @@ fieldset[disabled] .btn-danger.focus {
   background: #b94045;
 }
 
-.luckysheet-modal-dialog-slider-chart .luckysheet-modal-dialog-slider-content {
-  background: #fff;
-}
-
 #luckysheet-dialog-pivotTable-clearitem {
   color: blue;
   cursor: pointer;
   float: right;
-  margin-right: 30px;
 }
 
 /*冻结窗口样式*/
@@ -4304,7 +4255,6 @@ fieldset[disabled] .btn-danger.focus {
   top: 0px;
   left: 185px;
   right: 10px;
-  border-left: 1px solid #e5e5e5;
 }
 
 #luckysheet-functionbox-container > div {
@@ -4323,8 +4273,9 @@ fieldset[disabled] .btn-danger.focus {
   resize: none;
   font-size: 14px;
   line-height: 14px;
-  background-color: #ffffff;
+  background-color: var(--base-bg);
   padding: 0px 5px;
+  border: 1px solid #c6c6c6;
 }
 
 #luckysheet-functionbox .luckysheet-functionbox-cell-input {
@@ -4342,7 +4293,7 @@ fieldset[disabled] .btn-danger.focus {
   -webkit-user-modify: read-write-plaintext-only;
   white-space: pre-wrap;
   transform: translateZ(0);
-  background-color: white;
+  background: var(--base-bg);
 }
 
 .luckysheet-formula-text-color {
@@ -4361,14 +4312,14 @@ fieldset[disabled] .btn-danger.focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   color: #535353;
   font-size: 12px;
-  background: #fff;
+  background: var(--base-bg);
   z-index: 1003;
   width: 300px;
   display: none;
 }
 
 .luckysheet-formula-search-c .luckysheet-formula-search-item {
-  background: #fff;
+  background: var(--base-bg);
   padding: 5px 10px;
   cursor: pointer;
 }
@@ -4409,14 +4360,14 @@ fieldset[disabled] .btn-danger.focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   color: #535353;
   font-size: 12px;
-  background: #fff;
+  background: var(--base-bg);
   z-index: 1003;
   width: 300px;
 }
 
 .luckysheet-formula-help-c .luckysheet-formula-help-content {
   max-height: 300px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .luckysheet-formula-help-content-example {
@@ -4571,6 +4522,7 @@ fieldset[disabled] .btn-danger.focus {
 .luckysheetpopover {
   position: absolute;
   background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(15px) saturate(180%);
   color: #fff;
   font-size: 18px;
   padding: 20px 100px;
@@ -4579,6 +4531,7 @@ fieldset[disabled] .btn-danger.focus {
   border-radius: 4px;
   user-select: none;
   display: none;
+  font-family: var(--font-family);
 }
 
 .luckysheetpopover .luckysheetpopover-btn {
@@ -4604,7 +4557,6 @@ fieldset[disabled] .btn-danger.focus {
 
 /*查找替换弹出框样式*/
 #luckysheet-search-replace .tabBox {
-  margin-top: 20px;
   font-size: 0;
 }
 
@@ -4613,37 +4565,55 @@ fieldset[disabled] .btn-danger.focus {
   text-align: center;
   width: 100px;
   border: 1px solid #d4d4d4;
+  border-bottom: 0;
   font-size: 14px;
   line-height: 2;
 }
 
 #luckysheet-search-replace .tabBox span.on {
-  background-color: #8c89fe;
-  border-color: #726efe;
+  background-color: var(--primary-color);
   color: #fff;
+}
+
+#searchTab {
+  border-top-left-radius: 5px;
+  border-right: 0 !important;
+}
+
+#replaceTab {
+  border-top-right-radius: 5px;
+  border-left: 0 !important;
 }
 
 #luckysheet-search-replace .ctBox {
   padding: 5px 10px;
-  border: solid 1px #d4d4d4;
+  border: 1px solid #d4d4d4;
   font-size: 14px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 #luckysheet-search-replace .inputBox {
   height: 90px;
   position: relative;
+  display: flex;
+  gap: 1em;
 }
 
 #luckysheet-search-replace .inputBox .textboxs {
   height: 30px;
   line-height: 30px;
+  display: flex;
+  margin-bottom: 0.5em;
 }
 
-#luckysheet-search-replace .inputBox .checkboxs {
-  height: 90px;
-  position: absolute;
-  right: 0;
-  top: 0;
+#luckysheet-search-replace .inputBox .textboxs span {
+  width: 100px;
+}
+
+#luckysheet-search-replace .inputBox .textboxs input {
+  flex: 1;
 }
 
 #luckysheet-search-replace .inputBox .checkboxs div {
@@ -4652,7 +4622,6 @@ fieldset[disabled] .btn-danger.focus {
 }
 
 #luckysheet-search-replace .inputBox .checkboxs input[type="checkbox"] {
-  float: left;
   margin-top: 9px;
 }
 
@@ -4677,7 +4646,7 @@ fieldset[disabled] .btn-danger.focus {
   height: 30px;
   line-height: 29px;
   padding: 0 5px;
-  background-color: #fff;
+  background-color: var(--base-bg);
   border-bottom: 1px solid #d4d4d4;
   box-sizing: border-box;
   position: sticky;
@@ -4756,27 +4725,8 @@ fieldset[disabled] .btn-danger.focus {
   margin-bottom: 5px;
 }
 
-#luckysheet-search-formula .inpbox input {
-  width: 100%;
-  height: 24px;
-  line-height: 24px;
-  border: 1px solid #d4d4d4;
-  padding: 0 10px;
-  box-sizing: border-box;
-  font-size: 12px;
-}
-
 #luckysheet-search-formula .selbox {
   margin-bottom: 5px;
-}
-
-#luckysheet-search-formula .selbox select {
-  width: 50%;
-  height: 24px;
-  line-height: 24px;
-  border: 1px solid #d4d4d4;
-  box-sizing: border-box;
-  font-size: 12px;
 }
 
 #luckysheet-search-formula .listbox label {
@@ -4788,7 +4738,8 @@ fieldset[disabled] .btn-danger.focus {
   width: 300px;
   height: 170px;
   border: 1px solid #d4d4d4;
-  overflow-y: scroll;
+  overflow-y: auto;
+  border-radius: 5px;
 }
 
 #formulaTypeList .listBox {
@@ -4843,14 +4794,14 @@ fieldset[disabled] .btn-danger.focus {
 
 #luckysheet-search-formula-parm .parmBox .txt {
   width: 198px;
-  height: 28px;
+  height: 100%;
   border: 1px solid #d4d4d4;
   float: left;
 }
 
 #luckysheet-search-formula-parm .parmBox .txt input {
   width: 150px;
-  height: 28px;
+  height: 100%;
   padding: 0 10px;
   border: none;
   outline-style: none;
@@ -4890,7 +4841,7 @@ fieldset[disabled] .btn-danger.focus {
 #luckysheet-search-formula-parm .parmDetailsBox {
   max-height: 100px;
   padding: 5px 0 5px 20px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #luckysheet-search-formula-parm .parmDetailsBox span {
@@ -4942,31 +4893,9 @@ fieldset[disabled] .btn-danger.focus {
   font-weight: 600;
 }
 
-#luckysheet-conditionformat-dialog .box .inpbox {
-  width: 198px;
-  height: 28px;
-  border: 1px solid #d4d4d4;
-}
-
 #luckysheet-conditionformat-dialog .box .inpbox input {
   width: 150px;
-  height: 28px;
-  padding: 0 10px;
-  border: none;
-  outline-style: none;
-  float: left;
-}
-
-#luckysheet-conditionformat-dialog .box .inpbox2 {
-  float: left;
-  width: 108px;
-  height: 28px;
-  border: 1px solid #d4d4d4;
-}
-
-#luckysheet-conditionformat-dialog .box .inpbox2 input {
-  width: 60px;
-  height: 28px;
+  height: 100%;
   padding: 0 10px;
   border: none;
   outline-style: none;
@@ -4975,7 +4904,7 @@ fieldset[disabled] .btn-danger.focus {
 
 #luckysheet-conditionformat-dialog .box i.fa-table {
   float: right;
-  margin-top: 8px;
+  margin-top: 5px;
   margin-right: 5px;
 }
 
@@ -4990,9 +4919,9 @@ fieldset[disabled] .btn-danger.focus {
 
 #luckysheet-conditionformat-dialog .box #daterange-btn {
   width: 188px;
-  height: 28px;
+  height: 100%;
   padding: 0 5px;
-  line-height: 28px;
+  line-height: 100%;
   border: 1px solid #d4d4d4;
   cursor: pointer;
 }
@@ -5019,21 +4948,10 @@ fieldset[disabled] .btn-danger.focus {
   font-size: 12px;
 }
 
-#luckysheet-administerRule-dialog .chooseSheet {
-  height: 24px;
-  line-height: 24px;
-  margin-bottom: 5px;
-}
-
-#luckysheet-administerRule-dialog .chooseSheet select {
-  height: 24px;
-  padding: 0 5px;
-  box-sizing: border-box;
-  font-size: 12px;
-}
-
 #luckysheet-administerRule-dialog .ruleBox {
   border: 1px solid #d4d4d4;
+  border-radius: 5px;
+  margin-top: 0.5em;
 }
 
 #luckysheet-administerRule-dialog .ruleBox .ruleBtn {
@@ -5085,7 +5003,7 @@ fieldset[disabled] .btn-danger.focus {
 
 #luckysheet-administerRule-dialog .ruleBox .ruleList .listBox {
   height: 150px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #luckysheet-administerRule-dialog .ruleBox .ruleList .listBox .item {
@@ -5149,7 +5067,7 @@ fieldset[disabled] .btn-danger.focus {
   float: left;
   margin-left: 10px;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: var(--base-bg);
 }
 
 #luckysheet-administerRule-dialog
@@ -5216,7 +5134,7 @@ fieldset[disabled] .btn-danger.focus {
 }
 
 .luckysheet-newEditorRule-dialog .ruleTypeBox .ruleTypeItem .icon {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family);
 }
 
 .luckysheet-newEditorRule-dialog .ruleExplainBox {
@@ -5319,7 +5237,7 @@ fieldset[disabled] .btn-danger.focus {
   width: 164px;
   max-height: 150px;
   overflow-y: auto;
-  background-color: #fff;
+  background-color: var(--base-bg);
   border: 1px solid #e5e5e5;
   position: absolute;
   left: 80px;
@@ -5331,7 +5249,7 @@ fieldset[disabled] .btn-danger.focus {
 
 .luckysheet-newEditorRule-dialog .iconsBox ul li {
   padding: 5px 10px;
-  background-color: #fff;
+  background-color: var(--base-bg);
   cursor: pointer;
 }
 
@@ -5349,8 +5267,9 @@ fieldset[disabled] .btn-danger.focus {
 /*条件格式 图标集弹框*/
 #luckysheet-CFicons-dialog .box {
   padding: 10px;
-  border: 1px solid #dfdfdf;
-  font-size: 14px;
+  border: 1px solid #d4d4d4;
+  font-size: 1em;
+  border-radius: 5px;
 }
 
 #luckysheet-CFicons-dialog .box .title {
@@ -5379,7 +5298,7 @@ fieldset[disabled] .btn-danger.focus {
   width: 125px;
   height: 20px;
   padding: 2.5px 10px;
-  background-color: #fff;
+  background-color: var(--base-bg);
   cursor: pointer;
 }
 
@@ -5400,27 +5319,14 @@ fieldset[disabled] .btn-danger.focus {
   font-size: 12px;
 }
 
-#luckysheet-modal-dialog-slider-alternateformat
-  .luckysheet-modal-dialog-slider-content {
-  background-color: #fff;
-  overflow-y: scroll;
-}
-
 #luckysheet-modal-dialog-slider-alternateformat .textTitle {
   padding: 5px 10px;
   font-weight: 600;
 }
 
-#luckysheet-alternateformat-range {
-  width: 198px;
-  height: 28px;
-  border: 1px solid #d4d4d4;
-  margin-left: 10px;
-}
-
 #luckysheet-alternateformat-range input {
   width: 150px;
-  height: 28px;
+  height: 100%;
   padding: 0 10px;
   border: none;
   outline-style: none;
@@ -5429,7 +5335,7 @@ fieldset[disabled] .btn-danger.focus {
 
 #luckysheet-alternateformat-range .fa-table {
   float: right;
-  margin-top: 8px;
+  margin-top: 5px;
   margin-right: 5px;
   cursor: pointer;
   color: #6598f3;
@@ -5558,12 +5464,6 @@ fieldset[disabled] .btn-danger.focus {
   cursor: pointer;
 }
 
-#luckysheet-alternateformat-rangeDialog input {
-  border: 1px solid #d4d4d4;
-  padding: 0 10px;
-  height: 30px;
-}
-
 /*if公式生成器*/
 #luckysheet-ifFormulaGenerator-dialog {
   font-size: 12px;
@@ -5588,7 +5488,6 @@ fieldset[disabled] .btn-danger.focus {
   width: 150px;
   height: 100%;
   padding: 0 10px;
-  border: 1px solid #d4d4d4;
   box-sizing: border-box;
   float: left;
 }
@@ -5632,7 +5531,6 @@ fieldset[disabled] .btn-danger.focus {
   width: 100px;
   height: 100%;
   padding: 0 10px;
-  border: 1px solid #d4d4d4;
   box-sizing: border-box;
   float: left;
 }
@@ -5656,17 +5554,13 @@ fieldset[disabled] .btn-danger.focus {
 #luckysheet-ifFormulaGenerator-dialog #DivisionMethod {
   width: 100px;
   height: 100%;
-  border: 1px solid #d4d4d4;
-  box-sizing: border-box;
   float: left;
 }
 
 #luckysheet-ifFormulaGenerator-dialog #DivisionMethodVal {
   width: 120px;
   height: 100%;
-  border: 1px solid #d4d4d4;
   padding: 0 10px;
-  box-sizing: border-box;
   float: left;
   margin-left: 10px;
 }
@@ -5679,16 +5573,17 @@ fieldset[disabled] .btn-danger.focus {
   text-align: center;
   font-size: 14px;
   color: #fff;
-  background-color: #8c89fe;
+  background-color: var(--primary-color);
   float: right;
   cursor: pointer;
 }
 
 #luckysheet-ifFormulaGenerator-dialog .ifList {
-  border-top: 1px solid #d4d4d4;
+  border: 1px solid #d4d4d4;
   height: 180px;
   padding: 10px;
-  overflow-y: scroll;
+  overflow-y: auto;
+  border-radius: 5px;
 }
 
 #luckysheet-ifFormulaGenerator-dialog .ifList .item {
@@ -5764,10 +5659,11 @@ fieldset[disabled] .btn-danger.focus {
 
 /*定位*/
 #luckysheet-locationCell-dialog .listbox {
-  border: 1px solid #dfdfdf;
+  border: 1px solid #d4d4d4;
   padding: 10px;
   font-size: 14px;
   color: #000;
+  border-radius: 5px;
 }
 
 #luckysheet-locationCell-dialog .listbox .listItem {
@@ -5808,9 +5704,10 @@ fieldset[disabled] .btn-danger.focus {
 }
 
 #luckysheet-moreFormat-dialog .listbox {
-  border: 1px solid #666;
+  border: 1px solid #d4d4d4;
   height: 240px;
   overflow-y: auto;
+  border-radius: 5px;
 }
 
 #luckysheet-moreFormat-dialog .listbox .listItem {
@@ -5855,6 +5752,7 @@ fieldset[disabled] .btn-danger.focus {
 #luckysheet-splitColumn-dialog .box .boxMain {
   padding: 5px;
   border: 1px solid #dfdfdf;
+  border-radius: 5px;
 }
 
 #luckysheet-splitColumn-dialog .box input[type="checkbox"] {
@@ -6245,10 +6143,7 @@ fieldset[disabled] .btn-danger.focus {
   border-right: 2px solid #fff;
   border-top: 2px solid #fff;
 }
-#luckysheet-modal-dialog-slider-imageCtrl
-  .luckysheet-modal-dialog-slider-content {
-  background-color: #fff;
-}
+
 #luckysheet-modal-dialog-slider-imageCtrl .slider-box {
   border-bottom: 1px solid #e1e4e8;
 }
@@ -6256,9 +6151,7 @@ fieldset[disabled] .btn-danger.focus {
   padding: 10px 20px;
   font-weight: 600;
 }
-#luckysheet-modal-dialog-slider-imageCtrl .slider-box .slider-box-radios {
-  padding: 10px 30px;
-}
+
 #luckysheet-modal-dialog-slider-imageCtrl .slider-box .radio-item {
   margin-bottom: 10px;
 }
@@ -6268,31 +6161,33 @@ fieldset[disabled] .btn-danger.focus {
 #luckysheet-modal-dialog-slider-imageCtrl .slider-box .radio-item input {
   vertical-align: sub;
 }
+
 #luckysheet-modal-dialog-slider-imageCtrl .slider-box .slider-box-checkbox {
-  padding: 10px 30px;
-  border-top: 1px solid #e1e4e8;
+  padding: 10px 0px;
+  border-top: 1px solid #d4d4d4;
+  margin: 10px 0;
 }
+
 #luckysheet-modal-dialog-slider-imageCtrl
   .slider-box
   .slider-box-checkbox
   input {
   vertical-align: middle;
 }
-#luckysheet-modal-dialog-slider-imageCtrl .slider-box .slider-box-borderConfig {
-  padding: 10px 30px;
-}
+
 #luckysheet-modal-dialog-slider-imageCtrl .slider-box .border-item {
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
 }
-#luckysheet-modal-dialog-slider-imageCtrl .slider-box .border-item:last-child {
-  margin-bottom: 0;
-}
+
 #luckysheet-modal-dialog-slider-imageCtrl .slider-box .border-item label {
   display: inline-block;
   width: 40px;
 }
+#luckysheet-modal-dialog-slider-imageCtrl .slider-box .border-item select,
 #luckysheet-modal-dialog-slider-imageCtrl .slider-box .border-item input {
-  width: 130px;
+  flex: 1;
   padding: 5px;
 }
 #luckysheet-modal-dialog-slider-imageCtrl
@@ -6303,9 +6198,10 @@ fieldset[disabled] .btn-danger.focus {
   width: 20px;
   height: 20px;
   padding: 2px;
-  border: 1px solid #e1e4e8;
+  border: 1px solid #d4d4d4;
   vertical-align: middle;
   cursor: pointer;
+  border-radius: 5px;
 }
 #luckysheet-modal-dialog-slider-imageCtrl
   .slider-box
@@ -6374,18 +6270,14 @@ fieldset[disabled] .btn-danger.focus {
   width: 200px;
   height: 30px;
   padding: 0 10px;
-  border: 1px solid #d4d4d4;
-  outline-style: none;
-  box-sizing: border-box;
 }
+
 #luckysheet-insertLink-dialog .box-item select {
   width: 200px;
   height: 30px;
   padding: 0 5px;
-  border: 1px solid #d4d4d4;
-  outline-style: none;
-  box-sizing: border-box;
 }
+
 /* 数据验证 */
 #luckysheet-dataVerification-dialog {
   user-select: none;
@@ -6427,7 +6319,7 @@ fieldset[disabled] .btn-danger.focus {
 }
 #luckysheet-dataVerification-dialog .box-item .range input {
   width: calc(100% - 30px);
-  height: 30px;
+  height: 100%;
   padding: 0 10px;
   float: left;
   border: none;
@@ -6512,17 +6404,12 @@ fieldset[disabled] .btn-danger.focus {
 #luckysheet-dataVerification-dialog .show-box .show-box-item {
   display: none;
 }
-#luckysheet-dataVerificationRange-dialog input {
-  height: 30px;
-  padding: 0 10px;
-  border: 1px solid #d4d4d4;
-  outline-style: none;
-}
+
 #luckysheet-dataVerification-dropdown-btn {
   display: none;
   width: 20px;
   height: 20px;
-  background-color: #fff;
+  background-color: var(--base-bg);
   position: absolute;
   z-index: 10;
   overflow: hidden;
@@ -6545,7 +6432,7 @@ fieldset[disabled] .btn-danger.focus {
 }
 #luckysheet-dataVerification-dropdown-List {
   display: none;
-  background-color: #fff;
+  background-color: var(--base-bg);
   border: 1px solid #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   position: absolute;
@@ -6582,18 +6469,59 @@ fieldset[disabled] .btn-danger.focus {
 #luckysheet-dataVerification-showHintBox {
   display: none;
   padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background: rgba(250, 250, 250, 0.6);
+  backdrop-filter: blur(15px) saturate(180%);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   position: absolute;
   z-index: 1000;
   user-select: none;
   cursor: default;
   white-space: nowrap;
+  border-radius: 5px;
 }
 
 #luckysheet-icon-undo.disabled,
 #luckysheet-icon-redo.disabled {
   cursor: default;
   opacity: 0.4;
+}
+
+.form-input {
+  border-radius: 5px;
+  border: 1px solid #d4d4d4;
+  outline-style: none;
+  box-sizing: border-box;
+  padding: 0.188rem 0.38rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 100%;
+  height: 30px;
+  background: var(--base-bg);
+}
+
+.form-input:focus,
+.form-input:hover,
+.form-input:active {
+  border: 1px solid var(--primary-color);
+}
+
+.form-input input {
+  height: 100%;
+  width: auto;
+  border: none;
+  outline-style: none;
+}
+
+.formulaInputFocus {
+  width: 200px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify {
+  align-items: center;
+  justify-content: center;
 }

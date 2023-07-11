@@ -1,23 +1,19 @@
-#luckysheet-modal-dialog-slider-protection
-  .luckysheet-modal-dialog-slider-content {
-  background: #fff;
-}
-
 .luckysheet-slider-protection-config {
-  position: absolute;
   width: 100%;
 }
 
 .luckysheet-slider-protection-row {
-  position: relative;
-  width: 98%;
-  height: 35px;
-  left: 1%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
 }
 
 .luckysheet-slider-protection-column {
-  position: absolute;
   height: 100%;
+  width: 100%;
+  display: column;
+  flex-direction: row;
 }
 
 .luckysheet-slider-protection-config input,
@@ -38,16 +34,8 @@
   outline: none;
 }
 
-.luckysheet-protection-input {
-  width: 100%;
-  height: 19px;
-  position: relative;
-}
-
 .luckysheet-protection-textarea {
-  width: 100%;
-  height: 47px;
-  position: relative;
+  height: 150px;
   resize: none;
 }
 
@@ -100,10 +88,9 @@
 }
 
 .luckysheet-slider-protection-ok {
-  position: absolute;
   width: 100%;
   height: 100%;
-  background: #0188fb;
+  background: var(--primary-color);
   color: #fff;
   text-align: center;
   line-height: 45px;
@@ -120,7 +107,6 @@
 }
 
 .luckysheet-slider-protection-cancel {
-  position: absolute;
   width: 100%;
   height: 100%;
   background: #e6e6e6;
@@ -147,7 +133,6 @@
 }
 
 .luckysheet-protection-rangeItem {
-  position: relative;
   width: 100%;
   height: 30px;
   line-height: 30px;
@@ -160,7 +145,6 @@
 }
 
 .luckysheet-protection-rangeItem > div {
-  position: absolute;
   height: 100%;
   text-align: center;
   overflow: hidden;
@@ -212,7 +196,6 @@
 }
 
 .luckysheet-protection-rangeItem-content {
-  position: relative;
   width: 350px;
   height: 270px;
 }
@@ -221,8 +204,6 @@
   .luckysheet-slider-protection-column
   .range {
   width: 100%;
-  height: 30px;
-  border: 1px solid #d4d4d4;
 }
 
 #luckysheet-protection-rangeItem-dialog
@@ -230,7 +211,7 @@
   .range
   input {
   width: calc(100% - 30px);
-  height: 30px;
+  height: 100%;
   padding: 0 10px;
   float: left;
   border: none;
@@ -243,23 +224,20 @@
   .range
   i.fa-table {
   float: right;
-  margin-top: 9px;
+  margin-top: 5px;
   margin-right: 5px;
   cursor: pointer;
-  color: #6598f3;
+  color: var(--primary-color);
 }
 
 .luckysheet-protection-rangeItemTextarea {
   width: 100%;
   height: 120px;
-  position: relative;
   resize: none;
 }
 
 .luckysheet-protection-rangeItemiInput {
   width: 100%;
-  height: 23px;
-  position: relative;
 }
 
 .luckysheet-protection-sheet-validation {

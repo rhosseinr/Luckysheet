@@ -472,8 +472,8 @@ const ifFormulaGenerator = {
       '<label for="compareValue"> ' +
       locale_formula.ifGenCompareValueTitle +
       " </label>" +
-      '<div class="inpBox">' +
-      '<input id="compareValue" class="formulaInputFocus" value="' +
+      '<div class="form-input inpBox">' +
+      '<input id="compareValue" class="form-input formulaInputFocus" value="' +
       compareValue +
       '"/>' +
       '<i class="singRange fa fa-table" aria-hidden="true" title="' +
@@ -485,11 +485,11 @@ const ifFormulaGenerator = {
       '<label for="smallRange"> ' +
       locale_formula.ifGenRangeTitle +
       " </label>" +
-      '<input type="number" id="smallRange" class="formulaInputFocus"/>' +
+      '<input type="number" id="smallRange" class="form-input formulaInputFocus"/>' +
       '<span class="text"> ' +
       locale_formula.ifGenRangeTo +
       " </span>" +
-      '<input type="number" id="largeRange" class="formulaInputFocus"/>' +
+      '<input type="number" id="largeRange" class="form-input formulaInputFocus"/>' +
       '<div id="rangeAssess">' +
       "<span> " +
       locale_formula.ifGenRangeEvaluate +
@@ -503,7 +503,7 @@ const ifFormulaGenerator = {
       '<label for="DivisionMethod"> ' +
       locale_formula.ifGenCutWay +
       " </label>" +
-      '<select id="DivisionMethod">' +
+      '<select id="DivisionMethod" class="form-input">' +
       '<option value="0"> ' +
       locale_formula.ifGenCutSame +
       " </option>" +
@@ -514,7 +514,7 @@ const ifFormulaGenerator = {
       locale_formula.ifGenCutCustom +
       " </option>" +
       "</select>" +
-      '<input id="DivisionMethodVal" class="formulaInputFocus"/>' +
+      '<input id="DivisionMethodVal" class="form-input formulaInputFocus"/>' +
       '<div id="createBtn"> ' +
       locale_formula.ifGenCutSame +
       " </div>" +
@@ -609,7 +609,7 @@ const ifFormulaGenerator = {
         addclass: "luckysheet-ifFormulaGenerator-singleRange-dialog",
         title: locale_formula.ifGenTipSelectCell,
         content:
-          '<input readonly="readonly" placeholder="' +
+          '<input readonly="readonly" class="form-input" placeholder="' +
           locale_formula.ifGenTipSelectCellPlace +
           '" value="' +
           value +
@@ -655,7 +655,7 @@ const ifFormulaGenerator = {
         addclass: "luckysheet-ifFormulaGenerator-multiRange-dialog",
         title: locale_formula.ifGenTipSelectRange,
         content:
-          '<input readonly="readonly" placeholder="' +
+          '<input readonly="readonly" class="form-input" placeholder="' +
           locale_formula.ifGenTipSelectRangePlace +
           '" value="">',
         botton:

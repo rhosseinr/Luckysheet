@@ -105,7 +105,6 @@ const paths = {
     "src/plugins/js/spectrum.min.js",
     "src/plugins/js/jquery-ui.min.js",
     "src/plugins/js/jquery.mousewheel.min.js",
-    // 'src/plugins/js/numeral.min.js',
     "src/plugins/js/html2canvas.min.js",
     "src/plugins/js/localforage.min.js",
     "src/plugins/js/lodash.min.js",
@@ -159,7 +158,6 @@ function serve(done) {
 // Monitoring file changes
 function watcher(done) {
   watch(paths.core, { delay: 500 }, series(core, reloadBrowser));
-
   // watch plugins and css
   watch(paths.pluginsCss, { delay: 500 }, series(pluginsCss, reloadBrowser));
   watch(paths.plugins, { delay: 500 }, series(plugins, reloadBrowser));

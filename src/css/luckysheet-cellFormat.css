@@ -34,18 +34,23 @@
 }
 
 .luckysheet-cellFormat-menu-active {
-  background: #fff;
+  background: var(--base-bg);
   cursor: default;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .luckysheet-cellFormat-menu-active:hover {
-  background: #fff;
+  background: var(--base-bg);
 }
 
 .luckysheet-cellFormat-content {
   width: 100%;
   border: 1px solid #d4d4d4;
   border-top: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .luckysheet-cellFormat-protection {

@@ -2062,11 +2062,11 @@ const conditionformat = {
       // color: currenColor,
       cancelText: conditionformat_Text.cancel,
       chooseText: conditionformat_Text.confirmColor,
-      togglePaletteMoreText: "自定义",
-      togglePaletteLessText: "收起",
+      togglePaletteMoreText: "Customize",
+      togglePaletteLessText: "close",
       togglePaletteOnly: true,
       clearText: conditionformat_Text.clearColorSelect,
-      noColorSelectedText: "没有颜色被选择",
+      noColorSelectedText: "no color selected",
       localStorageKey: "spectrum.textcolor" + server.gridKey,
       palette: [
         ["#000", "#444", "#666", "#999", "#ccc", "#eee", "#f3f3f3", "#fff"],
@@ -2293,7 +2293,7 @@ const conditionformat = {
 
     let content = `<div class="chooseSheet">
                             <label>${conditionformat_Text.showRules}：</label>
-                            <select>${opHtml}</select>
+                            <select class="form-input">${opHtml}</select>
                         </div>
                         <div class="ruleBox">
                             <div class="ruleBtn">
@@ -2430,7 +2430,7 @@ const conditionformat = {
           formatHtml +
           "</div>" +
           '<div class="ruleRange">' +
-          '<input class="formulaInputFocus" readonly="true" value="' +
+          '<input class="form-input formulaInputFocus" readonly="true" value="' +
           rangeTxtArr.join(",") +
           '"/>' +
           '<i class="fa fa-table" aria-hidden="true" title="' +
@@ -3091,9 +3091,9 @@ const conditionformat = {
     switch (index) {
       case 0: //基于各自值设置所有单元格的格式
         ruleExplainHtml = `<div class="title">${conditionformat_Text.ruleTypeItem1}：</div>
-                                    <div style="height: 30px;margin-bottom: 5px;">
-                                        <label style="display: block;width: 80px;height: 30px;line-height: 30px;float: left;">${conditionformat_Text.formatStyle}：</label>
-                                        <select id="type1">
+                                    <div>
+                                        <label>${conditionformat_Text.formatStyle}：</label>
+                                        <select id="type1" class="form-input">
                                             <option value="dataBar">${conditionformat_Text.dataBar}</option>
                                             <option value="colorGradation">${conditionformat_Text.colorGradation}</option>
                                             <option value="icons">${conditionformat_Text.icons}</option>
@@ -3101,36 +3101,36 @@ const conditionformat = {
                                     </div>
                                     <div>
                                         <div class="type1Box dataBarBox">
-                                            <div style="height: 30px;margin-bottom: 5px;">
-                                                <label style="display: block;width: 80px;height: 30px;line-height: 30px;float: left;">${conditionformat_Text.fillType}：</label>
-                                                <select id="type2">
+                                            <div>
+                                                <label>${conditionformat_Text.fillType}：</label>
+                                                <select id="type2" class="form-input">
                                                     <option value="gradient">${conditionformat_Text.gradient}</option>
                                                     <option value="solid">${conditionformat_Text.solid}</option>
                                                 </select>
                                             </div>
-                                            <div style="height: 30px;margin-bottom: 5px;">
-                                                <label style="display: block;width: 80px;height: 30px;line-height: 30px;float: left;">${conditionformat_Text.color}：</label>
+                                            <div>
+                                                <label>${conditionformat_Text.color}：</label>
                                                 <input data-tips="${conditionformat_Text.dataBarColor}" data-func="background" class="luckysheet-conditionformat-config-color" type="text" value="#638ec6" style="display: none;"> 
                                             </div>
                                         </div>
                                         <div class="type1Box colorGradationBox" style="display: none;">
-                                            <div style="height: 30px;margin-bottom: 5px;">
-                                                <label style="display: block;width: 80px;height: 30px;line-height: 30px;float: left;">${conditionformat_Text.fillType}：</label>
-                                                <select id="type2">
+                                            <div>
+                                                <label>${conditionformat_Text.fillType}：</label>
+                                                <select id="type2" class="form-input">
                                                     <option value="threeColor">${conditionformat_Text.tricolor}</option>
                                                     <option value="twoColor">${conditionformat_Text.twocolor}</option>
                                                 </select>
                                             </div>
-                                            <div class="maxVal" style="height: 30px;margin-bottom: 5px;">
-                                                <label style="display: block;width: 80px;height: 30px;line-height: 30px;float: left;">${conditionformat_Text.maxValue}：</label>
+                                            <div class="maxVal">
+                                                <label>${conditionformat_Text.maxValue}：</label>
                                                 <input data-tips="${conditionformat_Text.maxValue} ${conditionformat_Text.color}" data-func="background" class="luckysheet-conditionformat-config-color" type="text" value="rgb(99, 190, 123)" style="display: none;">
                                             </div>
-                                            <div class="midVal" style="height: 30px;margin-bottom: 5px;">
-                                                <label style="display: block;width: 80px;height: 30px;line-height: 30px;float: left;">${conditionformat_Text.medianValue}：</label>
+                                            <div class="midVal">
+                                                <label>${conditionformat_Text.medianValue}：</label>
                                                 <input data-tips="${conditionformat_Text.medianValue} ${conditionformat_Text.color}" data-func="background" class="luckysheet-conditionformat-config-color" type="text" value="rgb(255, 235, 132)" style="display: none;">
                                             </div>
-                                            <div class="minVal" style="height: 30px;margin-bottom: 5px;">
-                                                <label style="display: block;width: 80px;height: 30px;line-height: 30px;float: left;">${conditionformat_Text.minValue}：</label>
+                                            <div class="minVal">
+                                                <label>${conditionformat_Text.minValue}：</label>
                                                 <input data-tips="${conditionformat_Text.minValue} ${conditionformat_Text.color}" data-func="background" class="luckysheet-conditionformat-config-color" type="text" value="rgb(248, 105, 107)" style="display: none;">
                                             </div>
                                         </div>
@@ -3167,7 +3167,7 @@ const conditionformat = {
         break;
       case 1: //只为包含以下内容的单元格设置格式
         ruleExplainHtml = `<div class="title">${conditionformat_Text.ruleTypeItem2_title}：</div>
-                                    <div style="height: 30px;margin-bottom: 10px;">
+                                    <div>
                                         <select id="type1">
                                             <option value="number">${conditionformat_Text.cellValue}</option>
                                             <option value="text">${conditionformat_Text.specificText}</option>
@@ -3181,13 +3181,13 @@ const conditionformat = {
                                                     <option value="betweenness">${conditionformat_Text.between}</option>
                                                     <option value="equal">${conditionformat_Text.equal}</option>
                                                 </select>
-                                                <div class="inpbox range" id="conditionVal">
-                                                    <input class="formulaInputFocus"/>
+                                                <div class="inpbox range form-input" id="conditionVal">
+                                                    <input class="form-input formulaInputFocus"/>
                                                     <i class="fa fa-table" aria-hidden="true" title="${conditionformat_Text.selectCell}"></i>
                                                 </div>
                                                 <span class="txt" style="display: none;">${conditionformat_Text.in}</span>
-                                                <div class="inpbox range" id="conditionVal2" style="display: none;">
-                                                    <input class="formulaInputFocus"/>
+                                                <div class="inpbox range form-input" id="conditionVal2" style="display: none;">
+                                                    <input class="form-input formulaInputFocus"/>
                                                     <i class="fa fa-table" aria-hidden="true" title="${conditionformat_Text.selectDataRange}"></i>
                                                 </div>
                                             </div>
@@ -3195,8 +3195,8 @@ const conditionformat = {
                                                 <select id="type2">
                                                     <option value="">${conditionformat_Text.contain}</option>
                                                 </select>
-                                                <div class="inpbox range" id="conditionVal">
-                                                    <input class="formulaInputFocus"/>
+                                                <div class="inpbox range form-input" id="conditionVal">
+                                                    <input class="form-input formulaInputFocus"/>
                                                     <i class="fa fa-table" aria-hidden="true" title="${conditionformat_Text.selectCell}"></i>
                                                 </div>
                                             </div>
@@ -3217,7 +3217,7 @@ const conditionformat = {
                                             <option value="last">${conditionformat_Text.last}</option>
                                         </select>
                                         <div class="inpbox" id="conditionVal">
-                                            <input class="formulaInputFocus" type="number" value="10"/>
+                                            <input class="form-input formulaInputFocus" type="number" value="10"/>
                                         </div>
                                         <input id="isPercent" type="checkbox"/>
                                         <label for="isPercent" class="txt">${conditionformat_Text.selectRange_percent}</label>
@@ -3249,8 +3249,8 @@ const conditionformat = {
       case 5: //使用公式确定要设置格式的单元格
         ruleExplainHtml = `<div class="title">${conditionformat_Text.ruleTypeItem2_title}：</div>
                                     <div style="height: 30px;margin-bottom: 10px;">
-                                        <div class="inpbox range" id="formulaConditionVal" style="width: 250px;">
-                                            <input class="formulaInputFocus" style="width: 200px;"/>
+                                        <div class="inpbox range form-input" id="formulaConditionVal" style="width: 250px;">
+                                            <input class="form-input formulaInputFocus" style="width: 200px;"/>
                                             <i class="fa fa-table" aria-hidden="true" title="${conditionformat_Text.selectCell}"></i>
                                         </div>
                                     </div>

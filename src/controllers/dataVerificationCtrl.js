@@ -90,14 +90,14 @@ const dataVerificationCtrl = {
     let content = `<div class="box">
                             <div class="box-item" style="border-top:1px solid #E1E4E8;">
                                 <div class="box-item-title">${dvText.cellRange}</div>
-                                <div id="data-verification-range" class="range">
+                                <div id="data-verification-range" class="form-input range">
                                     <input class="formulaInputFocus" spellcheck="false">
                                     <i class="fa fa-table" aria-hidden="true" title="${dvText.selectCellRange}"></i>
                                 </div>
                             </div>
                             <div class="box-item">
                                 <div class="box-item-title">${dvText.verificationCondition}</div>
-                                <select id="data-verification-type-select">
+                                <select id="data-verification-type-select" class="form-input">
                                     <option value="dropdown">${dvText.dropdown}</option>
                                     <option value="checkbox">${dvText.checkbox}</option>
                                     <option value="number">${dvText.number}</option>
@@ -110,7 +110,7 @@ const dataVerificationCtrl = {
                                 </select>
                                 <div class="show-box">
                                     <div class="show-box-item show-box-item-dropdown">
-                                        <div class="range">
+                                        <div class="range form-input">
                                             <input class="formulaInputFocus data-verification-value1" placeholder="${dvText.placeholder1}" spellcheck="false">
                                             <i class="fa fa-table" aria-hidden="true" title="${dvText.selectCellRange}"></i>
                                         </div>
@@ -122,15 +122,15 @@ const dataVerificationCtrl = {
                                     <div class="show-box-item show-box-item-checkbox">
                                         <div class="check-box">
                                             <span>${dvText.selected} ——</span>
-                                            <input type="text" class="data-verification-value1" placeholder="${dvText.placeholder2}">
+                                            <input type="text" class="form-input data-verification-value1" placeholder="${dvText.placeholder2}">
                                         </div>
                                         <div class="check-box">
                                             <span>${dvText.notSelected} ——</span>
-                                            <input type="text" class="data-verification-value2" placeholder="${dvText.placeholder2}">
+                                            <input type="text" class="form-input data-verification-value2" placeholder="${dvText.placeholder2}">
                                         </div>
                                     </div>
                                     <div class="show-box-item show-box-item-number">
-                                        <select id="data-verification-number-select">
+                                        <select id="data-verification-number-select" class="form-input">
                                             <option value="bw">${dvText.between}</option>
                                             <option value="nb">${dvText.notBetween}</option>
                                             <option value="eq">${dvText.equal}</option>
@@ -141,26 +141,26 @@ const dataVerificationCtrl = {
                                             <option value="lte">${dvText.lessThanOrEqualTo}</option>
                                         </select>
                                         <div class="input input1">
-                                            <input type="number" class="data-verification-value1" placeholder="1">
+                                            <input type="number" class="form-input data-verification-value1" placeholder="1">
                                             <span>-</span>
-                                            <input type="number" class="data-verification-value2" placeholder="100">
+                                            <input type="number" class="form-input data-verification-value2" placeholder="100">
                                         </div>
                                         <div class="input input2">
-                                            <input type="number" class="data-verification-value1" placeholder="${dvText.placeholder3}">
+                                            <input type="number" class="form-input data-verification-value1" placeholder="${dvText.placeholder3}">
                                         </div>
                                     </div>
                                     <div class="show-box-item show-box-item-text">
-                                        <select id="data-verification-text-select">
+                                        <select id="data-verification-text-select" class="form-input">
                                             <option value="include">${dvText.include}</option>
                                             <option value="exclude">${dvText.exclude}</option>
                                             <option value="equal">${dvText.equal}</option>
                                         </select>
                                         <div class="input input2">
-                                            <input type="text" class="data-verification-value1" placeholder="${dvText.placeholder4}"/>
+                                            <input type="text" class="form-input data-verification-value1" placeholder="${dvText.placeholder4}"/>
                                         </div>
                                     </div>
                                     <div class="show-box-item show-box-item-textLength">
-                                        <select id="data-verification-textLength-select">
+                                        <select id="data-verification-textLength-select" class="form-input">
                                             <option value="bw">${dvText.between}</option>
                                             <option value="nb">${dvText.notBetween}</option>
                                             <option value="eq">${dvText.equal}</option>
@@ -171,16 +171,16 @@ const dataVerificationCtrl = {
                                             <option value="lte">${dvText.lessThanOrEqualTo}</option>
                                         </select>
                                         <div class="input input1">
-                                            <input type="number" class="data-verification-value1" placeholder="1">
+                                            <input type="number" class="form-input data-verification-value1" placeholder="1">
                                             <span>-</span>
-                                            <input type="number" class="data-verification-value2" placeholder="100">
+                                            <input type="number" class="form-input data-verification-value2" placeholder="100">
                                         </div>
                                         <div class="input input2">
-                                            <input type="number" class="data-verification-value1" placeholder="${dvText.placeholder3}">
+                                            <input type="number" class="form-input data-verification-value1" placeholder="${dvText.placeholder3}">
                                         </div>
                                     </div>
                                     <div class="show-box-item show-box-item-date">
-                                        <select id="data-verification-date-select">
+                                        <select id="data-verification-date-select" class="form-input">
                                             <option value="bw">${dvText.between}</option>
                                             <option value="nb">${dvText.notBetween}</option>
                                             <option value="eq">${dvText.equal}</option>
@@ -191,16 +191,16 @@ const dataVerificationCtrl = {
                                             <option value="naf">${dvText.noLaterThan}</option>
                                         </select>
                                         <div class="input input1">
-                                            <input type="date" class="data-verification-value1" placeholder="2020/9/10">
+                                            <input type="date" class="form-input data-verification-value1" placeholder="2020/9/10">
                                             <span>-</span>
-                                            <input type="date" class="data-verification-value2" placeholder="2020/9/10">
+                                            <input type="date" class="form-input data-verification-value2" placeholder="2020/9/10">
                                         </div>
                                         <div class="input input2">
-                                            <input type="date" class="data-verification-value1" placeholder="2020/9/10">
+                                            <input type="date" class="form-input data-verification-value1" placeholder="2020/9/10">
                                         </div>
                                     </div>
                                     <div class="show-box-item show-box-item-validity">
-                                        <select id="data-verification-validity-select">
+                                        <select id="data-verification-validity-select" class="form-input">
                                             <option value="card">${dvText.identificationNumber}</option>
                                             <option value="phone">${dvText.phoneNumber}</option>
                                         </select>
@@ -1377,7 +1377,7 @@ const dataVerificationCtrl = {
         id: "luckysheet-dataVerificationRange-dialog",
         addclass: "luckysheet-dataVerificationRange-dialog",
         title: dvText.selectCellRange,
-        content: `<input readonly="readonly" placeholder="${dvText.selectCellRange2}" value="${txt}"/>`,
+        content: `<input readonly="readonly" class="form-input" placeholder="${dvText.selectCellRange2}" value="${txt}"/>`,
         botton: `<button id="luckysheet-dataVerificationRange-dialog-confirm" class="btn btn-primary" data-source="${dataSource}">${buttonText.confirm}</button>
                         <button id="luckysheet-dataVerificationRange-dialog-close" class="btn btn-default">${buttonText.close}</button>`,
         style: "z-index:100003",

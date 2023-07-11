@@ -199,15 +199,15 @@ const imageCtrl = {
                             <div class="slider-box-borderConfig">
                                 <div class="border-item">
                                     <label>${imageText.width}</label>
-                                    <input type="number" id="imgItemBorderWidth" min="0">
+                                    <input type="number" class="form-input" id="imgItemBorderWidth" min="0">
                                 </div>
                                 <div class="border-item">
                                     <label>${imageText.radius}</label>
-                                    <input type="number" id="imgItemBorderRadius" min="0">
+                                    <input type="number" class="form-input" id="imgItemBorderRadius" min="0">
                                 </div>
                                 <div class="border-item">
                                     <label>${imageText.style}</label>
-                                    <select id="imgItemBorderStyle">
+                                    <select class="form-input" id="imgItemBorderStyle">
                                         <option value="solid">${imageText.solid}</option>
                                         <option value="dashed">${imageText.dashed}</option>
                                         <option value="dotted">${imageText.dotted}</option>

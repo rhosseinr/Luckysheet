@@ -585,7 +585,7 @@ function initialProtectionRangeModal(file) {
                     <div class="luckysheet-slider-protection-column luckysheet-protection-column-3x">
                         ${local_protection.allowRangeAddTitle}
                     </div>
-                    <div class="luckysheet-slider-protection-column luckysheet-protection-column-7x" style="left:30%">
+                    <div class="luckysheet-slider-protection-column luckysheet-protection-column-7x">
                         <input class="form-input luckysheet-protection-rangeItemiInput" id="protection-allowRangeAdd-title"  placeHolder="${local_protection.allowRangeAddtitleDefault}">
                     </div>
                 </div>
@@ -593,9 +593,9 @@ function initialProtectionRangeModal(file) {
                     <div class="luckysheet-slider-protection-column luckysheet-protection-column-3x">
                         ${local_protection.allowRangeAddSqrf}
                     </div>
-                    <div class="luckysheet-slider-protection-column luckysheet-protection-column-7x" style="left:30%">
+                    <div class="luckysheet-slider-protection-column luckysheet-protection-column-7x">
                         <div id="protection-allowRangeAdd-range" class="form-input range">
-                            <input class="formulaInputFocus" spellcheck="false" placeHolder="${local_protection.selectCellRangeHolder}">
+                            <input class="form-input formulaInputFocus" spellcheck="false" placeHolder="${local_protection.selectCellRangeHolder}">
                             <i class="fa fa-table" aria-hidden="true" title="${local_protection.selectCellRange}"></i>
                         </div>
                     </div>
@@ -604,7 +604,7 @@ function initialProtectionRangeModal(file) {
                     <div class="luckysheet-slider-protection-column luckysheet-protection-column-3x">
                         ${local_protection.allowRangeAddTitlePassword}
                     </div>
-                    <div class="luckysheet-slider-protection-column luckysheet-protection-column-7x" style="left:30%">
+                    <div class="luckysheet-slider-protection-column luckysheet-protection-column-7x">
                         <input class="form-input luckysheet-protection-rangeItemiInput" id="protection-allowRangeAdd-password"  placeHolder="${local_protection.enterPassword}">
                     </div>
                 </div>
@@ -612,7 +612,7 @@ function initialProtectionRangeModal(file) {
                     <div class="luckysheet-slider-protection-column luckysheet-protection-column-3x">
                         ${local_protection.allowRangeAddTitleHint}
                     </div>
-                    <div class="luckysheet-slider-protection-column luckysheet-protection-column-7x" style="left:30%">
+                    <div class="luckysheet-slider-protection-column luckysheet-protection-column-7x">
                         <textarea class="form-input luckysheet-protection-rangeItemTextarea" id="protection-allowRangeAdd-hint"  placeHolder="${local_protection.allowRangeAddTitleHintTitle}"></textarea>
                     </div>
                 </div>
@@ -636,7 +636,7 @@ function initialProtectionRIghtBar(file) {
     let name = authorityItemArr[i];
 
     authorityItemHtml += `
-            <div class="luckysheet-slider-protection-row" style="height:18px;">
+            <div class="luckysheet-slider-protection-row">
                 <div class="luckysheet-slider-protection-column luckysheet-protection-column-10x">
                 <label for="luckysheet-protection-check-${name}"><input id="luckysheet-protection-check-${name}" name="luckysheet-protection-check-${name}" type="checkbox">${local_protection[name]}</label>
                 </div>
@@ -648,52 +648,52 @@ function initialProtectionRIghtBar(file) {
     <div id="luckysheet-modal-dialog-slider-protection" class="luckysheet-modal-dialog-slider luckysheet-modal-dialog-slider-pivot" style="display:none;">
         <div class="luckysheet-modal-dialog-slider-title"> <span>${local_protection.protectiontTitle}</span> <span id="luckysheet-modal-dialog-protection-close" title="${locale_button.close}"><i class="fa fa-times" aria-hidden="true"></i></span> </div>
         <div class="luckysheet-modal-dialog-slider-content">
-            <div class="luckysheet-slider-protection-config" style="top:10px;height:115px">
+            <div class="luckysheet-slider-protection-config">
                 <div class="luckysheet-slider-protection-row">
                     <div class="luckysheet-slider-protection-column luckysheet-protection-column-10x">
                     <label for="protection-swichProtectionState"><input id="protection-swichProtectionState" name="protection-swichProtectionState" type="checkbox">${local_protection.swichProtectionTip}</label>
                     </div>
                 </div>
-                <div class="luckysheet-slider-protection-row" style="height:23px;">
-                    <div class="luckysheet-slider-protection-column" style="width:98%;">
+                <div class="luckysheet-slider-protection-row">
+                    <div class="luckysheet-slider-protection-column">
                         <input class="form-input luckysheet-protection-input" id="protection-password"  placeHolder="${local_protection.enterPassword}">
                     </div>
                 </div>
-                <div class="luckysheet-slider-protection-row" style="height:47px;margin-top:4px;">
-                    <div class="luckysheet-slider-protection-column" style="width:98%;">
+                <div class="luckysheet-slider-protection-row">
+                    <div class="luckysheet-slider-protection-column">
                         <textarea class="form-input luckysheet-protection-textarea" id="protection-hint"  placeHolder="${local_protection.enterHint}"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="luckysheet-slider-protection-config" style="top:130px;height:290px;border-top:1px solid #c5c5c5">
-                <div class="luckysheet-slider-protection-row" style="height:20px;">
+            <div class="luckysheet-slider-protection-config">
+                <div class="luckysheet-slider-protection-row">
                     ${local_protection.authorityTitle}
                 </div>
                 ${authorityItemHtml}
             </div>
-            <div class="luckysheet-slider-protection-config" style="top:440px;bottom:45px;border-top:1px solid #c5c5c5">
-                <div class="luckysheet-slider-protection-row" style="height:25px;">
-                    <div class="luckysheet-slider-protection-column luckysheet-protection-column-7x" style="left:0px;line-height: 25px;">
+            <div class="luckysheet-slider-protection-config">
+                <div class="luckysheet-slider-protection-row">
+                    <div class="luckysheet-slider-protection-column luckysheet-protection-column-7x">
                         ${local_protection.allowRangeTitle}
                     </div>
-                    <div class="luckysheet-slider-protection-column luckysheet-protection-column-3x" style="left:70%;">
+                    <div class="luckysheet-slider-protection-column luckysheet-protection-column-3x">
                         <div class="luckysheet-slider-protection-ok luckysheet-slider-protection-addRange" id="luckysheet-slider-protection-addRange">
                             ${local_protection.allowRangeAdd}
                         </div>
                     </div>
                 </div>
 
-                <div id="luckysheet-protection-rangeItem-container" class="luckysheet-slider-protection-row" style="top:25px;bottom:0px;position:absolute">
+                <div id="luckysheet-protection-rangeItem-container" class="luckysheet-slider-protection-row">
                    
                 </div>
             </div>
-            <div class="luckysheet-slider-protection-config" style="bottom:0px;height:45px">
-                <div class="luckysheet-slider-protection-column luckysheet-protection-column-5x" style="left:0px;">
+            <div class="luckysheet-slider-protection-config d-flex">
+                <div class="luckysheet-slider-protection-column luckysheet-protection-column-5x">
                     <div class="luckysheet-slider-protection-ok" id="luckysheet-slider-protection-ok">
                         ${locale_button.confirm}
                     </div>
                 </div>
-                <div class="luckysheet-slider-protection-column luckysheet-protection-column-5x" style="left:50%;">
+                <div class="luckysheet-slider-protection-column luckysheet-protection-column-5x">
                     <div class="luckysheet-slider-protection-cancel" id="luckysheet-slider-protection-cancel">
                         ${locale_button.cancel}
                     </div>
@@ -717,7 +717,7 @@ function initialProtectionRIghtBar(file) {
                     ${local_protection.validationTips}
                 </div>
             </div>
-            <div class="luckysheet-slider-protection-row" style="margin-top:20px">
+            <div class="luckysheet-slider-protection-row">
                 <div class="luckysheet-slider-protection-column luckysheet-protection-column-10x">
                     <input type="password" class="luckysheet-protection-rangeItemiInput" placeHolder="${local_protection.validationInputHint}">
                 </div>
@@ -938,7 +938,7 @@ function openRangePasswordModal(rangeAut) {
                         
                     </div>
                 </div>
-                <div class="luckysheet-slider-protection-row" style="margin-top:20px">
+                <div class="luckysheet-slider-protection-row">
                     <div class="luckysheet-slider-protection-column luckysheet-protection-column-10x">
                         <input type="password" class="luckysheet-protection-rangeItemiInput" placeHolder="${local_protection.validationInputHint}">
                     </div>

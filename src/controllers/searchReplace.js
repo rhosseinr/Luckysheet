@@ -35,14 +35,14 @@ const luckysheetSearchReplace = {
       "</span>" +
       "</div>" +
       '<div class="ctBox">' +
-      '<div class="inputBox">' +
-      '<div class="textboxs" id="searchInput">' +
+      '<div class="inputBox"><div>' +
+      '<div class="textboxs" id="searchInput"><span>' +
       locale_findAndReplace.findTextbox +
-      '：<input class="formulaInputFocus" spellcheck="false" value=""/></div>' +
-      '<div class="textboxs" id="replaceInput">' +
+      '：</span><input class="form-input formulaInputFocus" spellcheck="false" value=""/></div>' +
+      '<div class="textboxs" id="replaceInput"><span>' +
       locale_findAndReplace.replaceTextbox +
-      '：<input class="formulaInputFocus" spellcheck="false" value=""/></div>' +
-      '<div class="checkboxs">' +
+      '：</span><input class="form-input formulaInputFocus" spellcheck="false" value=""/></div>' +
+      '</div><div class="checkboxs">' +
       '<div id="regCheck">' +
       '<input type="checkbox"/>' +
       "<span>" +
